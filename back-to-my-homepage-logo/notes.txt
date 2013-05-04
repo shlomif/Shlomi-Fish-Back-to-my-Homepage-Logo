@@ -1,0 +1,4 @@
+Colour in the middle: #00deff
+
+Colour in the edges: #0010ff
+Colour in the edges: #0000ff
