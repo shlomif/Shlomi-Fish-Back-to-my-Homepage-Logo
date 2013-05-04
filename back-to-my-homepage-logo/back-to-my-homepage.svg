@@ -24,9 +24,9 @@
      borderopacity="1.0"
      inkscape:pageopacity="0.0"
      inkscape:pageshadow="2"
-     inkscape:zoom="0.83725927"
+     inkscape:zoom="0.83860318"
      inkscape:cx="526.18109"
-     inkscape:cy="371.45005"
+     inkscape:cy="372.04724"
      inkscape:document-units="px"
      inkscape:current-layer="layer1"
      showgrid="true"
@@ -76,45 +76,41 @@
     <text
        xml:space="preserve"
        style="font-size:145.6787262px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Homa;-inkscape-font-specification:Homa Bold Italic"
-       x="139.74789"
+       x="153.74789"
        y="728.28186"
        id="text3004"
        sodipodi:linespacing="125%"><tspan
          sodipodi:role="line"
-         x="139.74789"
+         x="153.74789"
          y="728.28186"
          id="tspan3036">BACK</tspan></text>
     <text
        sodipodi:linespacing="125%"
        id="text3032"
-       y="791.59784"
-       x="121.72895"
+       y="848.79218"
+       x="134.06142"
        style="font-size:48.61144257px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Homa;-inkscape-font-specification:Homa Bold Italic"
        xml:space="preserve"><tspan
-         id="tspan3034"
-         y="791.59784"
-         x="121.72895"
-         sodipodi:role="line">TO</tspan><tspan
-         y="852.36212"
-         x="121.72895"
+         y="848.79218"
+         x="134.06142"
          sodipodi:role="line"
-         id="tspan3042">MY</tspan></text>
+         id="tspan3005">MY</tspan></text>
     <text
        xml:space="preserve"
        style="font-size:119.40697479px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Homa;-inkscape-font-specification:Homa Bold Italic"
-       x="198.43887"
-       y="836.39392"
+       x="217.07718"
+       y="837.56866"
        id="text3044"
        sodipodi:linespacing="125%"
        transform="scale(0.98359162,1.0166821)"><tspan
          id="tspan3050"
          sodipodi:role="line"
-         x="198.43887"
-         y="836.39392">HOMEPAGE</tspan></text>
+         x="217.07718"
+         y="837.56866">HOMEPAGE</tspan></text>
     <g
        style="font-size:145.6787262px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Homa;-inkscape-font-specification:Homa Bold Italic"
        id="text3060"
-       transform="translate(-3.9999986,0)">
+       transform="translate(10.000001,0)">
       <path
          d="m 504.7293,613.27587 -27.52816,51.99764 6.11737,63.16538 7.99009,-31.91969 88,-3e-5 0,-49.99997 -74,0"
          id="K-arrow"
@@ -124,7 +120,7 @@
     </g>
     <path
        style="font-size:145.6787262px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Homa;-inkscape-font-specification:Homa Bold Italic"
-       d="m 590.14166,696.51917 26.09606,0 0,-50.0003 -26.09606,0"
+       d="m 604.14166,696.51917 26.09606,0 0,-50.0003 -26.09606,0"
        id="K-arrow-rect-1"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc"
@@ -134,14 +130,25 @@
        sodipodi:nodetypes="cccc"
        inkscape:connector-curvature="0"
        id="path3002"
-       d="m 631.0708,696.51917 26.09606,0 0,-50.0003 -26.09606,0"
+       d="m 645.0708,696.51917 26.09606,0 0,-50.0003 -26.09606,0"
        style="font-size:145.6787262px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Homa;-inkscape-font-specification:Homa Bold Italic" />
     <path
        style="font-size:145.6787262px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Homa;-inkscape-font-specification:Homa Bold Italic"
-       d="m 671.99994,696.51917 26.09606,0 0,-50.0003 -26.09606,0"
+       d="m 685.99994,696.51917 26.09606,0 0,-50.0003 -26.09606,0"
        id="path3004"
        inkscape:connector-curvature="0"
        sodipodi:nodetypes="cccc"
        inkscape:label="#path3071-6" />
+    <text
+       xml:space="preserve"
+       style="font-size:48.61144257px;font-style:italic;font-variant:normal;font-weight:bold;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Homa;-inkscape-font-specification:Homa Bold Italic"
+       x="148.06142"
+       y="792.79218"
+       id="text2997"
+       sodipodi:linespacing="125%"><tspan
+         id="tspan3001"
+         sodipodi:role="line"
+         x="148.06142"
+         y="792.79218">TO</tspan></text>
   </g>
 </svg>
