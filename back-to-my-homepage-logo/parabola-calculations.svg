@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="1052.3622"
+   height="744.09448"
+   id="svg4537"
+   version="1.1"
+   inkscape:version="0.48.4 r9939"
+   sodipodi:docname="parabola-calculations.svg">
+  <defs
+     id="defs4539" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.60207408"
+     inkscape:cx="526.18109"
+     inkscape:cy="372.8777"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     inkscape:window-width="1169"
+     inkscape:window-height="651"
+     inkscape:window-x="672"
+     inkscape:window-y="0"
+     inkscape:window-maximized="0">
+    <inkscape:grid
+       type="xygrid"
+       id="grid4566"
+       empspacing="5"
+       visible="true"
+       enabled="true"
+       snapvisiblegridlinesonly="true"
+       units="cm"
+       spacingx="0.5cm"
+       spacingy="0.5cm" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata4542">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-308.2677)">
+    <path
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       d="m 177.16535,124.01574 0,354.33071"
+       id="path4568"
+       inkscape:connector-curvature="0"
+       transform="translate(0,308.2677)" />
+    <path
+       transform="translate(0,308.2677)"
+       inkscape:connector-curvature="0"
+       id="path4570"
+       d="m 177.16535,124.01574 c 119.76455,119.22953 117.18838,237.31569 0,354.33071"
+       style="fill:none;stroke:#000000;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+       sodipodi:nodetypes="cc" />
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Eclipse;-inkscape-font-specification:Eclipse"
+       x="177.16536"
+       y="822.04724"
+       id="text4572"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4574"
+         x="177.16536"
+         y="822.04724">x=0;y=0</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Eclipse;-inkscape-font-specification:Eclipse"
+       x="176.88853"
+       y="116.26476"
+       id="text4576"
+       sodipodi:linespacing="125%"
+       transform="translate(0,308.2677)"><tspan
+         sodipodi:role="line"
+         id="tspan4578"
+         x="176.88853"
+         y="116.26476">x=0;y=H</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Eclipse;-inkscape-font-specification:Eclipse"
+       x="276.54404"
+       y="308.10162"
+       id="text4580"
+       sodipodi:linespacing="125%"
+       transform="translate(0,308.2677)"><tspan
+         sodipodi:role="line"
+         x="276.54404"
+         y="308.10162"
+         id="tspan4584">x=D;y=H/2</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Eclipse;-inkscape-font-specification:Eclipse"
+       x="-301.18109"
+       y="379.13385"
+       id="text4588"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         x="-301.18109"
+         y="379.13385"
+         id="tspan4592" /><tspan
+         sodipodi:role="line"
+         x="-301.18109"
+         y="429.13385"
+         id="tspan4615" /></text>
+    <text
+       xml:space="preserve"
+       style="font-size:40px;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;text-align:start;line-height:125%;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;fill:#000000;fill-opacity:1;stroke:none;font-family:Eclipse;-inkscape-font-specification:Eclipse"
+       x="549.21259"
+       y="538.58264"
+       id="text4637"
+       sodipodi:linespacing="125%"><tspan
+         sodipodi:role="line"
+         id="tspan4639"
+         x="549.21259"
+         y="538.58264">x=a(y-H/2)^2+D</tspan><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="588.58264"
+         id="tspan4641">0=a(-H/2)^2+D</tspan><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="638.58264"
+         id="tspan4643">a = -[4D]/[H^2]</tspan><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="688.58264"
+         id="tspan4645" /><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="738.58264"
+         id="tspan4647">x = -4D(y-H/2)^2/[H^2]+D</tspan><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="788.58264"
+         id="tspan4655">x=D[1-4{[y-H/2]^2/[H^2]}]</tspan><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="838.58264"
+         id="tspan4657">x=D[1-4[((y-H/2)/H)^2]</tspan><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="888.58264"
+         id="tspan4659">x=D{1-4[y/H-1/2]^2}</tspan><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="938.58264"
+         id="tspan4661">x=D{1-[-1+y/(H/2)]^2}</tspan><tspan
+         sodipodi:role="line"
+         x="549.21259"
+         y="988.58264"
+         id="tspan4651" /></text>
+  </g>
+</svg>
