@@ -1,0 +1,15 @@
+<inkscape-extension>
+    <_name>Add Path Sample</_name>
+    <id>org.shlomifish.add_path</id>
+	<dependency type="executable" location="extensions">add_path.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+    <effect>
+	<object-type>path</object-type>
+        <effects-menu>
+            <submenu _name="Modify Path"/>
+        </effects-menu>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">add_path.py</command>
+    </script>
+</inkscape-extension>
