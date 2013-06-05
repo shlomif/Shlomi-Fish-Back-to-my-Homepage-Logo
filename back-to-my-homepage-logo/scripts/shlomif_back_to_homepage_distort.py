@@ -183,11 +183,14 @@ class StyleEffect(GenericAddPathEffect):
                     id="b2h_3" />
                 </svg:linearGradient>''')
                 )
+        self.xpathSingle(u'svg:defs').insert(1,
+                inkex.etree.XML('''<svg:linearGradient xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="back_to_my_hp_gradient_rotated" gradientTransform="rotate(90)" xlink:href="#back_to_my_hp_gradient" />''')
+                )
         self.xpathSingle(u'//*[@id="' + main_path_id() + '"]').set(
                 'style', simplestyle.formatStyle({
                     'stroke': '#888888',
                     'stroke-width': '1pt',
-                    'fill': 'url(#back_to_my_hp_gradient)',
+                    'fill': 'url(#back_to_my_hp_gradient_rotated)',
                     }
                     ))
 
