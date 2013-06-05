@@ -63,6 +63,18 @@ def draw_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
 
     line = inkex.etree.SubElement(parent, inkex.addNS('path','svg'), line_attribs )
 
+
+class AddPathEffect(inkex.Effect):
+
+    def __init__(self):
+            inkex.Effect.__init__(self)
+
+    def get_path_id(self):
+        return 'for_envelope_path'
+
+    def effect(self):
+        draw_path( (150.0, 400.0), (300.0, 100.0), 30.0, 20.0, 'MyPath', self.get_path_id(), self.current_layer )
+
 def draw_perspective_path( p1, p2, p3, p4, name, my_id, parent):
     style = {   'stroke'        : '#000000',
                 'stroke-width'  : '1',
@@ -78,18 +90,6 @@ def draw_perspective_path( p1, p2, p3, p4, name, my_id, parent):
 
     line = inkex.etree.SubElement(parent, inkex.addNS('path','svg'), line_attribs )
 
-class AddPathEffect(inkex.Effect):
-
-    def __init__(self):
-            inkex.Effect.__init__(self)
-
-    def get_path_id(self):
-        return 'for_envelope_path'
-
-    def effect(self):
-        draw_path( (150.0, 400.0), (300.0, 100.0), 30.0, 20.0, 'MyPath', self.get_path_id(), self.current_layer )
-
-
 class AddPerspectivePathEffect(inkex.Effect):
 
     def __init__(self):
@@ -99,7 +99,7 @@ class AddPerspectivePathEffect(inkex.Effect):
         return 'for_persepctive_path'
 
     def effect(self):
-        draw_perspective_path( (500,500), (450,450), (600,400), (650, 550), 'MyPerspectivePath', self.get_path_id(), self.current_layer )
+        draw_perspective_path( (500,500), (500,300), (900,350), (900, 450), 'MyPerspectivePath', self.get_path_id(), self.current_layer )
 
 e = AddPathEffect()
 e.affect(args=sys.argv[1:],output=False)
