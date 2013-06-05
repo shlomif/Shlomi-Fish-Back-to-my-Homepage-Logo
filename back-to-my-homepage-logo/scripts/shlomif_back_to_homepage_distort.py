@@ -45,6 +45,12 @@ from ffgeom import *
 
 from os.path import expanduser, join
 
+temp_dir = tempfile.mkdtemp()
+
+def temp_svg_fn(basename):
+    global temp_dir
+    return join(temp_dir, basename + '.svg')
+
 def p2s(x,y):
     return str(x) + ',' + str(y)
 
@@ -77,13 +83,25 @@ def calc_distort_path((x,y), (w,h), bez_w_percent, bez_h_percent):
 
 class GenericAddPathEffect(inkex.Effect):
 
-    def __init__(self):
+    def __init__(self, basename):
+        self.basename = basename
         inkex.Effect.__init__(self)
 
     def effect(self):
         draw_generic_style_path(self.get_path_name(), self.get_path_id(), self.current_layer,
             self.calc_d_s()
         )
+
+    def calc_out_fn(self):
+        return temp_svg_fn(self.basename)
+
+    def write_to_temp(self, input_fn):
+        self.affect(args=[input_fn], output=False)
+        with open(self.calc_out_fn(), 'w') as fh:
+            self.document.write(fh)
+
+        return
+
 
 class AddPathEffect(GenericAddPathEffect):
 
@@ -115,40 +133,31 @@ class AddPerspectivePathEffect(GenericAddPathEffect):
             (500,500), (500,300), (900,350), (900, 450)
         )
 
-e = AddPathEffect()
-e.affect(args=sys.argv[1:],output=False)
-
-temp_dir = tempfile.mkdtemp()
-with_path__filename = join(temp_dir, 'with_path.svg');
-with open(with_path__filename, 'w') as fh:
-    e.document.write(fh)
-
 def main_path_id():
     return 'back'
 
 def id_arg(my_id):
     return '--id=' + my_id
 
+distort_e = AddPathEffect('with_path')
+distort_e.write_to_temp(sys.argv[-1])
+
 with_envelope_text = subprocess.check_output(
         ['python',
             join(expanduser('~'), '.config', 'inkscape', 'extensions', 'bezierenvelope.py'),
             id_arg(main_path_id()),
-            id_arg(e.get_path_id()),
-            with_path__filename
+            id_arg(distort_e.get_path_id()),
+            distort_e.calc_out_fn()
         ]
 )
 
-with_envelope__filename = join(temp_dir, 'with_envelope.svg');
+with_envelope__filename = temp_svg_fn('with_envelope');
 
 with open(with_envelope__filename, 'w') as fh:
     fh.write(with_envelope_text)
 
-e = AddPerspectivePathEffect()
-e.affect(args=[with_envelope__filename],output=False)
-
-with_pers_path__filename = join(temp_dir, 'with_persepctive_path.svg');
-with open(with_pers_path__filename, 'w') as fh:
-    e.document.write(fh)
+pers_e = AddPerspectivePathEffect('with_persepctive_path')
+pers_e.write_to_temp(with_envelope__filename)
 
 # with_pers_path__text = open(with_pers_path__filename).read()
 
@@ -156,10 +165,11 @@ with_perspective_applied_text = subprocess.check_output(
         ['python',
             '/usr/share/inkscape/extensions/perspective.py',
             id_arg(main_path_id()),
-            id_arg(e.get_path_id()),
-            with_pers_path__filename
+            id_arg(pers_e.get_path_id()),
+            pers_e.calc_out_fn()
         ]
 )
+
 shutil.rmtree(temp_dir)
 
 sys.stdout.write(with_perspective_applied_text)
