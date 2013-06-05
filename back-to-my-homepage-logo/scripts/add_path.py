@@ -34,7 +34,7 @@ def p2s(x,y):
     return str(x) + ',' + str(y)
 
 #draw an SVG line segment between the given (raw) points
-def draw_path( (x,y), (w,h), bez_h_percent, bez_w_percent, name, my_id, parent):
+def draw_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
     style = {   'stroke'        : '#000000',
                 'stroke-width'  : '1',
                 'fill'          : 'none'            }
@@ -62,7 +62,7 @@ class AddPathEffect(inkex.Effect):
             inkex.Effect.__init__(self)
 
     def effect(self):
-        draw_path( (150.0, 400.0), (300.0, 100.0), 'MyPath', 'for_envelope_path', self.current_layer )
+        draw_path( (150.0, 400.0), (300.0, 100.0), 10.0, 20.0, 'MyPath', 'for_envelope_path', self.current_layer )
 
 
 e = AddPathEffect()
