@@ -27,7 +27,8 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 '''
 
-import inkex, os, simplepath, cubicsuperpath, simpletransform,sys
+import inkex, os, simplepath, cubicsuperpath, simpletransform, sys
+import simplestyle
 from ffgeom import *
 
 def p2s(x,y):
@@ -52,7 +53,7 @@ def draw_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
     line_attribs = {'style' : simplestyle.formatStyle(style),
                     inkex.addNS('label','inkscape') : name,
                     'id': my_id,
-                    'd' : 'm ' + p2s(x,y)}
+                    'd' : d_s}
 
     line = inkex.etree.SubElement(parent, inkex.addNS('path','svg'), line_attribs )
 
