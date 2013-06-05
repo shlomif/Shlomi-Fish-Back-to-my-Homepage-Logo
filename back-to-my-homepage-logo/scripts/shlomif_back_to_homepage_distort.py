@@ -47,6 +47,20 @@ from os.path import expanduser, join
 
 temp_dir = tempfile.mkdtemp()
 
+def param(name):
+    Params = {
+            'distort_wh_ratio': 3,
+            'bez_w_percent': 30,
+            'bez_h_percent': 20,
+            'perspective_wh_ratio': 2,
+            'perspective_edge_percent': 50,
+    }
+    ret = Params[name]
+    if (isinstance(ret, (int, long))):
+        return float(ret)
+    else:
+        return ret
+
 def temp_svg_fn(basename):
     global temp_dir
     return join(temp_dir, basename + '.svg')
@@ -112,7 +126,13 @@ class AddDistortPathEffect(GenericAddPathEffect):
         return 'for_envelope_path'
 
     def calc_d_s(self):
-        return calc_distort_path((150.0, 400.0), (300.0, 100.0), 30.0, 20.0)
+        h = 100.0
+        w = h * param('distort_wh_ratio')
+        return calc_distort_path(
+            (150.0, 400.0),
+            (w, h),
+            param('bez_w_percent'), param('bez_h_percent')
+        )
 
 def calc_perspective_path( p1, p2, p3, p4):
     d_list = ['M'] + [p2s(*p) for p in [p1,p2,p3,p4]] + ['z']
@@ -129,8 +149,20 @@ class AddPerspectivePathEffect(GenericAddPathEffect):
         return 'for_persepctive_path'
 
     def calc_d_s(self):
+        orig_x = 500.0
+        orig_y = 500.0
+
+        h = 200.0
+        w = param('perspective_wh_ratio') * h
+
+        half_h = h * 0.5
+        edge_h = (half_h * param('perspective_edge_percent')) / 100
+
         return calc_perspective_path(
-            (500,500), (500,300), (900,350), (900, 450)
+            (orig_x,orig_y),
+            (orig_x,orig_y-h),
+            (orig_x+w,orig_y-h+edge_h),
+            (orig_x+w,orig_y-edge_h)
         )
 
 def main_path_id():
