@@ -47,7 +47,7 @@ def draw_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
     d_s += p2s(w,0) + ' '
     d_s += p2s(0,h) + ' '
     d_s += p2s(-w,0) + ' '
-    d_s += 'c ' + p2s(bez_w,-bez_h) + ' ' + p2s(bez_w,h-bez_h) + ' ' + p2s(0,-h) + ' '
+    d_s += 'c ' + p2s(bez_w,-bez_h) + ' ' + p2s(bez_w,-(h-bez_h)) + ' ' + p2s(0,-h) + ' '
     d_s += 'z'
 
     line_attribs = {'style' : simplestyle.formatStyle(style),
