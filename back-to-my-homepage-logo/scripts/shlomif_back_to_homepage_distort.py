@@ -50,7 +50,7 @@ temp_dir = tempfile.mkdtemp()
 def param(name):
     Params = {
             'distort_wh_ratio': 3,
-            'bez_w_percent': 30,
+            'bez_w_percent': 20,
             'bez_h_percent': 20,
             'perspective_wh_ratio': 2,
             'perspective_edge_percent': 50,
