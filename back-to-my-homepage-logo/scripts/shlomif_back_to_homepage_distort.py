@@ -32,6 +32,7 @@ import simplestyle
 import tempfile
 import shutil
 import subprocess
+import string
 from ffgeom import *
 
 from os.path import expanduser, join
@@ -62,6 +63,21 @@ def draw_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
 
     line = inkex.etree.SubElement(parent, inkex.addNS('path','svg'), line_attribs )
 
+def draw_perspective_path( p1, p2, p3, p4, name, my_id, parent):
+    style = {   'stroke'        : '#000000',
+                'stroke-width'  : '1',
+                'fill'          : 'none'            }
+
+    d_list = ['M'] + [p2s(*p) for p in [p1,p2,p3,p4]] + ['z']
+    d_s = string.join(d_list, ' ')
+
+    line_attribs = {'style' : simplestyle.formatStyle(style),
+                    inkex.addNS('label','inkscape') : name,
+                    'id': my_id,
+                    'd' : d_s}
+
+    line = inkex.etree.SubElement(parent, inkex.addNS('path','svg'), line_attribs )
+
 class AddPathEffect(inkex.Effect):
 
     def __init__(self):
@@ -74,6 +90,17 @@ class AddPathEffect(inkex.Effect):
         draw_path( (150.0, 400.0), (300.0, 100.0), 30.0, 20.0, 'MyPath', self.get_path_id(), self.current_layer )
 
 
+class AddPerspectivePathEffect(inkex.Effect):
+
+    def __init__(self):
+            inkex.Effect.__init__(self)
+
+    def get_path_id(self):
+        return 'for_persepctive_path'
+
+    def effect(self):
+        draw_perspective_path( (500,500), (450,450), (600,400), (650, 550), 'MyPerspectivePath', self.get_path_id(), self.current_layer )
+
 e = AddPathEffect()
 e.affect(args=sys.argv[1:],output=False)
 
@@ -82,15 +109,35 @@ with_path__filename = join(temp_dir, 'with_path.svg');
 with open(with_path__filename, 'w') as fh:
     e.document.write(fh)
 
-with_envelope = subprocess.check_output(
+def main_path_id():
+    return 'back'
+
+def id_arg(my_id):
+    return '--id=' + my_id
+
+with_envelope_text = subprocess.check_output(
         ['python',
             join(expanduser('~'), '.config', 'inkscape', 'extensions', 'bezierenvelope.py'),
-            ('--id=' + 'back'),
-            ('--id=' + e.get_path_id()),
+            id_arg(main_path_id()),
+            id_arg(e.get_path_id()),
             with_path__filename
         ]
 )
 
+with_envelope__filename = join(temp_dir, 'with_envelope.svg');
+
+with open(with_envelope__filename, 'w') as fh:
+    fh.write(with_envelope_text)
+
+e = AddPerspectivePathEffect()
+e.affect(args=[with_envelope__filename],output=False)
+
+with_pers_path__filename = join(temp_dir, 'with_persepctive_path.svg');
+with open(with_pers_path__filename, 'w') as fh:
+    e.document.write(fh)
+
+with_pers_path__text = open(with_pers_path__filename).read()
+
 shutil.rmtree(temp_dir)
 
-sys.stdout.write(with_envelope)
+sys.stdout.write(with_pers_path__text)
