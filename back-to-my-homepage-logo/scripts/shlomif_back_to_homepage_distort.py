@@ -48,12 +48,21 @@ from os.path import expanduser, join
 def p2s(x,y):
     return str(x) + ',' + str(y)
 
-#draw an SVG line segment between the given (raw) points
-def draw_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
+def draw_generic_style_path(name, my_id, parent, d_s):
     style = {   'stroke'        : '#000000',
                 'stroke-width'  : '1',
                 'fill'          : 'none'            }
 
+    path_attribs = {'style' : simplestyle.formatStyle(style),
+                    inkex.addNS('label','inkscape') : name,
+                    'id': my_id,
+                    'd' : d_s}
+
+    path = inkex.etree.SubElement(parent, inkex.addNS('path','svg'), path_attribs )
+
+    return path
+
+def draw_distort_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
     bez_w = (h * bez_w_percent) / 100
     bez_h = (h * bez_h_percent) / 100
     d_s = 'm '
@@ -64,13 +73,7 @@ def draw_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
     d_s += 'c ' + p2s(bez_w,-bez_h) + ' ' + p2s(bez_w,-(h-bez_h)) + ' ' + p2s(0,-h) + ' '
     d_s += 'z'
 
-    line_attribs = {'style' : simplestyle.formatStyle(style),
-                    inkex.addNS('label','inkscape') : name,
-                    'id': my_id,
-                    'd' : d_s}
-
-    line = inkex.etree.SubElement(parent, inkex.addNS('path','svg'), line_attribs )
-
+    return draw_generic_style_path(name, my_id, parent, d_s)
 
 class AddPathEffect(inkex.Effect):
 
@@ -81,22 +84,13 @@ class AddPathEffect(inkex.Effect):
         return 'for_envelope_path'
 
     def effect(self):
-        draw_path( (150.0, 400.0), (300.0, 100.0), 30.0, 20.0, 'MyPath', self.get_path_id(), self.current_layer )
+        draw_distort_path( (150.0, 400.0), (300.0, 100.0), 30.0, 20.0, 'MyPath', self.get_path_id(), self.current_layer )
 
 def draw_perspective_path( p1, p2, p3, p4, name, my_id, parent):
-    style = {   'stroke'        : '#000000',
-                'stroke-width'  : '1',
-                'fill'          : 'none'            }
-
     d_list = ['M'] + [p2s(*p) for p in [p1,p2,p3,p4]] + ['z']
     d_s = string.join(d_list, ' ')
 
-    line_attribs = {'style' : simplestyle.formatStyle(style),
-                    inkex.addNS('label','inkscape') : name,
-                    'id': my_id,
-                    'd' : d_s}
-
-    line = inkex.etree.SubElement(parent, inkex.addNS('path','svg'), line_attribs )
+    return draw_generic_style_path(name, my_id, parent, d_s)
 
 class AddPerspectivePathEffect(inkex.Effect):
 
