@@ -25,6 +25,14 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
+
+Requires:
+
+* https://github.com/shlomif/Bezier-Envelope-for-Inkscape - to be installed
+under ~/.config/inkscape/extensions
+
+* Inkscape 0.48 or above.
+
 '''
 
 import inkex, os, simplepath, cubicsuperpath, simpletransform, sys
