@@ -75,19 +75,26 @@ def calc_distort_path((x,y), (w,h), bez_w_percent, bez_h_percent):
 
     return d_s;
 
-
-class AddPathEffect(inkex.Effect):
+class GenericAddPathEffect(inkex.Effect):
 
     def __init__(self):
-            inkex.Effect.__init__(self)
+        inkex.Effect.__init__(self)
+
+    def effect(self):
+        draw_generic_style_path(self.get_path_name(), self.get_path_id(), self.current_layer,
+            self.calc_d_s()
+        )
+
+class AddPathEffect(GenericAddPathEffect):
+
+    def get_path_name(self):
+        return 'MyPath'
 
     def get_path_id(self):
         return 'for_envelope_path'
 
-    def effect(self):
-        draw_generic_style_path('MyPath', self.get_path_id(), self.current_layer,
-            calc_distort_path((150.0, 400.0), (300.0, 100.0), 30.0, 20.0)
-        )
+    def calc_d_s(self):
+        return calc_distort_path((150.0, 400.0), (300.0, 100.0), 30.0, 20.0)
 
 def calc_perspective_path( p1, p2, p3, p4):
     d_list = ['M'] + [p2s(*p) for p in [p1,p2,p3,p4]] + ['z']
@@ -95,19 +102,17 @@ def calc_perspective_path( p1, p2, p3, p4):
 
     return d_s
 
-class AddPerspectivePathEffect(inkex.Effect):
+class AddPerspectivePathEffect(GenericAddPathEffect):
 
-    def __init__(self):
-            inkex.Effect.__init__(self)
+    def get_path_name(self):
+        return 'MyPerspectivePath'
 
     def get_path_id(self):
         return 'for_persepctive_path'
 
-    def effect(self):
-        draw_generic_style_path( 'MyPerspectivePath', self.get_path_id(), self.current_layer,
-            calc_perspective_path(
-                (500,500), (500,300), (900,350), (900, 450)
-            )
+    def calc_d_s(self):
+        return calc_perspective_path(
+            (500,500), (500,300), (900,350), (900, 450)
         )
 
 e = AddPathEffect()
