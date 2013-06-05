@@ -136,8 +136,16 @@ with_pers_path__filename = join(temp_dir, 'with_persepctive_path.svg');
 with open(with_pers_path__filename, 'w') as fh:
     e.document.write(fh)
 
-with_pers_path__text = open(with_pers_path__filename).read()
+# with_pers_path__text = open(with_pers_path__filename).read()
 
+with_perspective_applied_text = subprocess.check_output(
+        ['python',
+            '/usr/share/inkscape/extensions/perspective.py',
+            id_arg(main_path_id()),
+            id_arg(e.get_path_id()),
+            with_pers_path__filename
+        ]
+)
 shutil.rmtree(temp_dir)
 
-sys.stdout.write(with_pers_path__text)
+sys.stdout.write(with_perspective_applied_text)
