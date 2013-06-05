@@ -103,7 +103,7 @@ class GenericAddPathEffect(inkex.Effect):
         return
 
 
-class AddPathEffect(GenericAddPathEffect):
+class AddDistortPathEffect(GenericAddPathEffect):
 
     def get_path_name(self):
         return 'MyPath'
@@ -139,7 +139,7 @@ def main_path_id():
 def id_arg(my_id):
     return '--id=' + my_id
 
-distort_e = AddPathEffect('with_path')
+distort_e = AddDistortPathEffect('with_path')
 distort_e.write_to_temp(sys.argv[-1])
 
 with_envelope_text = subprocess.check_output(
