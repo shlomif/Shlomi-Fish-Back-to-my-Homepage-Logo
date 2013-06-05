@@ -165,6 +165,32 @@ class AddPerspectivePathEffect(GenericAddPathEffect):
             (orig_x+w,orig_y-edge_h)
         )
 
+class StyleEffect(GenericAddPathEffect):
+    def effect(self):
+        self.xpathSingle(u'svg:defs').insert(0,
+                inkex.etree.XML('''<svg:linearGradient xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="back_to_my_hp_gradient">
+                <stop style="stop-color:#0000ff;stop-opacity:1"
+                    offset="0"
+                    id="b2h_0" />
+                <stop style="stop-color:#00deff;stop-opacity:1"
+                    offset="0.4"
+                    id="b2h_1" />
+                <stop style="stop-color:#00deff;stop-opacity:1"
+                    offset="0.6"
+                    id="b2h_2" />
+                <stop style="stop-color:#0000ff;stop-opacity:1"
+                    offset="1"
+                    id="b2h_3" />
+                </svg:linearGradient>''')
+                )
+        self.xpathSingle(u'//*[@id="' + main_path_id() + '"]').set(
+                'style', simplestyle.formatStyle({
+                    'stroke': '#888888',
+                    'stroke-width': '1pt',
+                    'fill': 'url(#back_to_my_hp_gradient)',
+                    }
+                    ))
+
 def main_path_id():
     return 'back'
 
@@ -202,6 +228,14 @@ with_perspective_applied_text = subprocess.check_output(
         ]
 )
 
-shutil.rmtree(temp_dir)
+with_perspective_applied__filename = temp_svg_fn('with_pers_applied');
 
-sys.stdout.write(with_perspective_applied_text)
+with open(with_perspective_applied__filename, 'w') as fh:
+    fh.write(with_perspective_applied_text)
+
+style_e = StyleEffect('after_styling')
+style_e.write_to_temp(with_perspective_applied__filename)
+
+sys.stdout.write(open(style_e.calc_out_fn()).read())
+
+shutil.rmtree(temp_dir)
