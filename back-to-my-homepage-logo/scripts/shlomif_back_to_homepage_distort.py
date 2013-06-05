@@ -62,7 +62,7 @@ def draw_generic_style_path(name, my_id, parent, d_s):
 
     return path
 
-def draw_distort_path( (x,y), (w,h), bez_w_percent, bez_h_percent, name, my_id, parent):
+def draw_distort_path(name, my_id, parent, (x,y), (w,h), bez_w_percent, bez_h_percent):
     bez_w = (h * bez_w_percent) / 100
     bez_h = (h * bez_h_percent) / 100
     d_s = 'm '
@@ -84,9 +84,9 @@ class AddPathEffect(inkex.Effect):
         return 'for_envelope_path'
 
     def effect(self):
-        draw_distort_path( (150.0, 400.0), (300.0, 100.0), 30.0, 20.0, 'MyPath', self.get_path_id(), self.current_layer )
+        draw_distort_path( 'MyPath', self.get_path_id(), self.current_layer, (150.0, 400.0), (300.0, 100.0), 30.0, 20.0, )
 
-def draw_perspective_path( p1, p2, p3, p4, name, my_id, parent):
+def draw_perspective_path( name, my_id, parent, p1, p2, p3, p4):
     d_list = ['M'] + [p2s(*p) for p in [p1,p2,p3,p4]] + ['z']
     d_s = string.join(d_list, ' ')
 
@@ -101,7 +101,7 @@ class AddPerspectivePathEffect(inkex.Effect):
         return 'for_persepctive_path'
 
     def effect(self):
-        draw_perspective_path( (500,500), (500,300), (900,350), (900, 450), 'MyPerspectivePath', self.get_path_id(), self.current_layer )
+        draw_perspective_path( 'MyPerspectivePath', self.get_path_id(), self.current_layer, (500,500), (500,300), (900,350), (900, 450) )
 
 e = AddPathEffect()
 e.affect(args=sys.argv[1:],output=False)
