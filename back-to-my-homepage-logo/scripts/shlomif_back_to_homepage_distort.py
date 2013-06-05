@@ -168,7 +168,7 @@ class AddPerspectivePathEffect(GenericAddPathEffect):
 class StyleEffect(GenericAddPathEffect):
     def effect(self):
         self.xpathSingle(u'svg:defs').insert(0,
-                inkex.etree.XML('''<svg:linearGradient xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="back_to_my_hp_gradient">
+                inkex.etree.XML('''<svg:linearGradient xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" id="bk2hp_grad">
                 <stop style="stop-color:#0000ff;stop-opacity:1"
                     offset="0"
                     id="b2h_0" />
@@ -184,13 +184,13 @@ class StyleEffect(GenericAddPathEffect):
                 </svg:linearGradient>''')
                 )
         self.xpathSingle(u'svg:defs').insert(1,
-                inkex.etree.XML('''<svg:linearGradient xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="back_to_my_hp_gradient_rotated" gradientTransform="rotate(90)" xlink:href="#back_to_my_hp_gradient" />''')
+                inkex.etree.XML('''<svg:linearGradient xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="bk2hp_grad_rot" gradientTransform="rotate(90)" xlink:href="#bk2hp_grad" />''')
                 )
         self.xpathSingle(u'//*[@id="' + main_path_id() + '"]').set(
                 'style', simplestyle.formatStyle({
                     'stroke': '#888888',
                     'stroke-width': '1pt',
-                    'fill': 'url(#back_to_my_hp_gradient_rotated)',
+                    'fill': 'url(#bk2hp_grad_rot)',
                     }
                     ))
 
