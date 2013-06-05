@@ -1,0 +1,15 @@
+<inkscape-extension>
+    <_name>Shlomif Back to My Homepage Distort</_name>
+    <id>org.shlomifish.back_to_myhomepage_distort</id>
+	<dependency type="executable" location="extensions">shlomif_back_to_homepage_distort.py</dependency>
+	<dependency type="executable" location="extensions">inkex.py</dependency>
+    <effect>
+	<object-type>path</object-type>
+        <effects-menu>
+            <submenu _name="Modify Path"/>
+        </effects-menu>
+    </effect>
+    <script>
+        <command reldir="extensions" interpreter="python">shlomif_back_to_homepage_distort.py</command>
+    </script>
+</inkscape-extension>
