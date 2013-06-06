@@ -97,8 +97,9 @@ def calc_distort_path((x,y), (w,h), bez_w_percent, bez_h_percent):
 
 class GenericAddPathEffect(inkex.Effect):
 
-    def __init__(self, basename):
+    def __init__(self, basename, input_fn):
         self.basename = basename
+        self.input_fn = input_fn
         inkex.Effect.__init__(self)
 
     def effect(self):
@@ -109,8 +110,8 @@ class GenericAddPathEffect(inkex.Effect):
     def calc_out_fn(self):
         return temp_svg_fn(self.basename)
 
-    def write_to_temp(self, input_fn):
-        self.affect(args=[input_fn], output=False)
+    def write_to_temp(self):
+        self.affect(args=[self.input_fn], output=False)
         with open(self.calc_out_fn(), 'w') as fh:
             self.document.write(fh)
 
@@ -200,8 +201,8 @@ def main_path_id():
 def id_arg(my_id):
     return '--id=' + my_id
 
-distort_e = AddDistortPathEffect('with_path')
-distort_e.write_to_temp(sys.argv[-1])
+distort_e = AddDistortPathEffect('with_path', sys.argv[-1])
+distort_e.write_to_temp()
 
 with_envelope_text = subprocess.check_output(
         ['python',
@@ -217,8 +218,10 @@ with_envelope__filename = temp_svg_fn('with_envelope');
 with open(with_envelope__filename, 'w') as fh:
     fh.write(with_envelope_text)
 
-pers_e = AddPerspectivePathEffect('with_persepctive_path')
-pers_e.write_to_temp(with_envelope__filename)
+pers_e = AddPerspectivePathEffect('with_persepctive_path',
+    with_envelope__filename
+)
+pers_e.write_to_temp()
 
 # with_pers_path__text = open(with_pers_path__filename).read()
 
@@ -236,8 +239,8 @@ with_perspective_applied__filename = temp_svg_fn('with_pers_applied');
 with open(with_perspective_applied__filename, 'w') as fh:
     fh.write(with_perspective_applied_text)
 
-style_e = StyleEffect('after_styling')
-style_e.write_to_temp(with_perspective_applied__filename)
+style_e = StyleEffect('after_styling', with_perspective_applied__filename)
+style_e.write_to_temp()
 
 sys.stdout.write(open(style_e.calc_out_fn()).read())
 
