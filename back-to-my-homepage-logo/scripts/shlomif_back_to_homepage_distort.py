@@ -184,8 +184,21 @@ class StyleEffect(GenericAddPathEffect):
                     id="b2h_3" />
                 </svg:linearGradient>''')
                 )
+
+        # Query the bounding box of main_path_id()
+        q = {'x': 0, 'y': 0, 'width': 0, 'height': 0}
+        for param in q.keys():
+            param_val_from_input = subprocess.check_output(
+                ['inkscape', ('--query-'+param), ('--query-id=' + main_path_id()), self.input_fn]
+            )
+            q[param] = float(param_val_from_input)
+
         self.xpathSingle(u'svg:defs').insert(1,
-                inkex.etree.XML('''<svg:linearGradient xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="bk2hp_grad_rot" gradientTransform="rotate(90)" xlink:href="#bk2hp_grad" />''')
+                inkex.etree.XML('''<svg:linearGradient xmlns:svg="http://www.w3.org/2000/svg" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" id="bk2hp_grad_rot" xlink:href="#bk2hp_grad" x1="%(x)f" y1="%(start_y)f" x2="%(x)f" y2="%(end_y)f" gradientUnits="userSpaceOnUse" />''' % {
+                        'x': (q['x'] + q['width']*0.5),
+                        'start_y': q['y'],
+                        'end_y': (q['y']+q['height']),
+                    })
                 )
         self.xpathSingle(u'//*[@id="' + main_path_id() + '"]').set(
                 'style', simplestyle.formatStyle({
