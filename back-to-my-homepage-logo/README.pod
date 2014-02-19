@@ -18,6 +18,12 @@ files. See the Makefile there.
 
 =head1 THE FILES
 
+=head2 back-to-my-homepage--path-union--with-less-vertical-space.svg
+
+This is the image from which to start the work. Open it in Inkscape
+and select C<Extensions → Modify Path → Shlomif Back to my Homepage Distort>
+and you should get the final image.
+
 =head2 create_gradient.py
 
 Unused file to create a gradient for GIMP. I wanted to use it but didn't
@@ -35,7 +41,7 @@ A temporary file for trying the slant feature in Inkscape.
 
 The final image.
 
-=head2 
+=head2
 =cut
 
 =
