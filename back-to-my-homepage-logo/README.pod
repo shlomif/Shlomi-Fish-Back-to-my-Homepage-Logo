@@ -1,0 +1,36 @@
+=encoding utf8
+
+=head1 INSTALLATION
+
+=over 4
+
+=item 1. Install Bezier-Envelope-for-Inkscape
+
+Install L<https://github.com/shlomif/Bezier-Envelope-for-Inkscape> under
+~/.config/inkscape/extensions/
+
+=item 2. make install under "scripts/".
+
+Go to "scripts/" directory and type "make install" to install the needed
+files. See the Makefile there.
+
+=back
+
+=head1 THE FILES
+
+=head2 create_gradient.py
+
+Unused file to create a gradient for GIMP. I wanted to use it but didn't
+eventually.
+
+=head2 notes.txt
+
+Colour probing notes on the gradient.
+
+=head2 trying-slant.svg
+
+A temporary file for trying the slant feature in Inkscape.
+
+=cut
+
+=
