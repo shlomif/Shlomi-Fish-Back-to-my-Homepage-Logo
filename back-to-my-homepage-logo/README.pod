@@ -11,8 +11,8 @@ Install L<https://github.com/shlomif/Bezier-Envelope-for-Inkscape> under
 
 =item 2. make install under "scripts/".
 
-Go to "scripts/" directory and type "make install" to install the needed
-files. See the Makefile there.
+Enter the "scripts/" directory of this repository’s sub-directory and type
+"make install" to install the needed files. See the Makefile there.
 
 =back
 
@@ -26,8 +26,8 @@ and you should get the final image.
 
 =head2 create_gradient.py
 
-Unused file to create a gradient for GIMP. I wanted to use it but didn't
-eventually.
+Unused file to create a gradient for GIMP. I originally wanted to use it, but
+eventually decided against it.
 
 =head2 notes.txt
 
@@ -42,6 +42,7 @@ A temporary file for trying the slant feature in Inkscape.
 The final image.
 
 =head2
+
 =cut
 
 =
