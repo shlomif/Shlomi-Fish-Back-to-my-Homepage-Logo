@@ -5,6 +5,9 @@
 This is the new and Inkscape-based version of Shlomi Fish’s web graphics
 reading “Back to my Homepage” in the style of the logo of the film
 L<Back to the Future|http://en.wikipedia.org/wiki/Back_to_the_Future> .
+
+Its homepage is now at L<http://www.shlomifish.org/art/back-to-my-homepage-2nd-ver/> .
+
 The previous version, which was done using CorelDRAW, can be found at
 L<its page on Shlomi Fish’s site|http://www.shlomifish.org/art/bk2hp/>,
 but its CDR and resulting GIF may not be too usable.
