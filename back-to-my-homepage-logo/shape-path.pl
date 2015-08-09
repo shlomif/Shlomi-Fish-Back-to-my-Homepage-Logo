@@ -15,7 +15,7 @@ $xpc->registerNs('svg' => 'http://www.w3.org/2000/svg');
 
 my ($path_el) = $xpc->findnodes('//svg:path');
 
-my 
+my
 # print $path_el->toString(), "\n";
 
 
