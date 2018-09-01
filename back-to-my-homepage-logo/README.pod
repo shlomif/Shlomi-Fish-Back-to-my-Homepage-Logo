@@ -37,9 +37,13 @@ Colour probing notes on the gradient.
 
 A temporary file for trying the slant feature in Inkscape.
 
-=head2 back-to-my-homepage--scripted-final--with-gradient-applied.svg
+=head2 back-to-my-homepage--scripted-final--with-gradient-applied--cropped.svg
 
 The final image.
+
+=head2 back-to-my-homepage--scripted-final--with-gradient-applied.svg
+
+The pre final image.
 
 =head2
 
