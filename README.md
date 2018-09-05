@@ -1,5 +1,7 @@
 # ABOUT
 
+![Back to my Homepage logo](back-to-my-homepage-logo/back-to-my-homepage--scripted-final--with-gradient-applied--cropped.svg)
+
 This is the new and Inkscape-based version of Shlomi Fish’s web graphics
 reading “Back to my Homepage” in the style of the logo of the film
 [Back to the Future](http://en.wikipedia.org/wiki/Back_to_the_Future) .
