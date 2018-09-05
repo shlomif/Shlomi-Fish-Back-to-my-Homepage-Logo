@@ -2,19 +2,21 @@
 
 ![Back to my Homepage logo](back-to-my-homepage-logo/back-to-my-homepage--scripted-final--with-gradient-applied--cropped.svg)
 
-This is the new and Inkscape-based version of Shlomi Fish’s web graphics
+This is the new and [Inkscape](https://inkscape.org/)-based version of Shlomi
+Fish’s web graphics image
 reading “Back to my Homepage” in the style of the logo of the film
 [Back to the Future](http://en.wikipedia.org/wiki/Back_to_the_Future) .
 
 Its homepage is now at http://www.shlomifish.org/art/back-to-my-homepage-2nd-ver/ .
 
-The previous version, which was done using CorelDRAW, can be found at
+The previous version, which was done using CorelDRAW, can be found on
 [its page on Shlomi Fish’s site](http://www.shlomifish.org/art/bk2hp/),
 but its CDR and resulting GIF may not be too usable.
 
 # HOW TO USE
 
-See the README file in the below directory for more information.
+See the README file in the [directory below](back-to-my-homepage-logo/) for
+more information.
 
 # LICENSE
 
