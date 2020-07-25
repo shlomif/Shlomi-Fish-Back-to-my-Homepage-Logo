@@ -21,7 +21,7 @@ Enter the "scripts/" directory of this repository’s sub-directory and type
 =head2 Automated script
 
 Perhaps running "bash scripts/render-automatically.bash" (after the
-installation) will work for you.
+installation) will work for you. It emits the file "RESULT-bk2hp.svg".
 
 =head2 back-to-my-homepage--path-union--with-less-vertical-space.svg
 

@@ -35,6 +35,7 @@ under ~/.config/inkscape/extensions
 
 '''
 
+import re
 import shutil
 import subprocess
 import sys
@@ -306,6 +307,10 @@ output_fn = None
 for i, arg in enumerate(sys.argv):
     if arg == '--output':
         output_fn = sys.argv[i+1]
+        break
+    m = re.match("\\A--output=(.*)", arg)
+    if m:
+        output_fn = m.group(1)
         break
 
 if output_fn is None:
