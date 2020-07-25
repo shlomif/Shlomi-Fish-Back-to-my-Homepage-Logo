@@ -297,9 +297,20 @@ with open(with_perspective_applied__filename, 'wb') as fh:
     fh.write(with_perspective_applied_text)
 
 style_e = StyleEffect('after_styling', with_perspective_applied__filename)
-style_e.run()
-# style_e.write_to_temp()
-# with open(style_e.calc_out_fn(), 'rt') as fh:
-#     sys.stdout.write(fh.read())
+# style_e.run()
+style_e.write_to_temp()
+with open(style_e.calc_out_fn(), 'rt') as fh:
+    text = fh.read()
 
+output_fn = None
+for i, arg in enumerate(sys.argv):
+    if arg == '--output':
+        output_fn = sys.argv[i+1]
+        break
+
+if output_fn is None:
+    sys.stdout.write(text)
+else:
+    with open(output_fn, 'wt') as fh:
+        fh.write(text)
 shutil.rmtree(temp_dir)
