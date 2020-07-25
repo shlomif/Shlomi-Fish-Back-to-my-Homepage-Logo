@@ -18,6 +18,11 @@ Enter the "scripts/" directory of this repository’s sub-directory and type
 
 =head1 THE FILES
 
+=head2 Automated script
+
+Perhaps running "bash scripts/render-automatically.bash" (after the
+installation) will work for you.
+
 =head2 back-to-my-homepage--path-union--with-less-vertical-space.svg
 
 This is the image from which to start the work. Open it in Inkscape
