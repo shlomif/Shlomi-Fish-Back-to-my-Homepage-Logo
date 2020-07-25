@@ -127,9 +127,8 @@ class GenericAddPathEffect(inkex.Effect):
         return temp_svg_fn(self.basename)
 
     def write_to_temp(self):
-        self.run(args=[self.input_fn], output=False)
         with open(self.calc_out_fn(), 'wb') as fh:
-            self.document.write(fh)
+            self.run(args=[self.input_fn], output=fh)
 
         return
 
@@ -253,6 +252,7 @@ def id_arg(my_id):
 
 distort_e = AddDistortPathEffect('with_path', sys.argv[-1])
 distort_e.write_to_temp()
+# assert 0
 
 with_envelope_text = subprocess.check_output(
         [
@@ -290,6 +290,9 @@ with_perspective_applied_text = subprocess.check_output(
 
 with_perspective_applied__filename = temp_svg_fn('with_pers_applied')
 
+# print('LLLLLLLLLLLLLLLLLLLLLL' +
+#    with_perspective_applied_text.decode('utf-8'))
+# assert 0
 with open(with_perspective_applied__filename, 'wb') as fh:
     fh.write(with_perspective_applied_text)
 
