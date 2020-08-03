@@ -1,4 +1,4 @@
-#!/usr/bin/env python
+#!/usr/bin/env python2
 '''
 Back to Homepage Distort
 
@@ -82,7 +82,9 @@ def draw_generic_style_path(name, my_id, parent, d_s):
 
     return path
 
-def calc_distort_path((x,y), (w,h), bez_w_percent, bez_h_percent):
+def calc_distort_path(xy, wh, bez_w_percent, bez_h_percent):
+    (x,y)=xy
+    (w,h)= wh
     bez_w = (h * bez_w_percent) / 100
     bez_h = (h * bez_h_percent) / 100
     d_s = 'm '
@@ -218,7 +220,7 @@ distort_e = AddDistortPathEffect('with_path', sys.argv[-1])
 distort_e.write_to_temp()
 
 with_envelope_text = subprocess.check_output(
-        ['python',
+        ['python2',
             join(expanduser('~'), '.config', 'inkscape', 'extensions', 'bezierenvelope.py'),
             id_arg(main_path_id()),
             id_arg(distort_e.get_path_id()),
@@ -239,7 +241,7 @@ pers_e.write_to_temp()
 # with_pers_path__text = open(with_pers_path__filename).read()
 
 with_perspective_applied_text = subprocess.check_output(
-        ['python',
+        ['python2',
             '/usr/share/inkscape/extensions/perspective.py',
             id_arg(main_path_id()),
             id_arg(pers_e.get_path_id()),
