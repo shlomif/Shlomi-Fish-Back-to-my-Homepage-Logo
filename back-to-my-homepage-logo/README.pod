@@ -23,6 +23,12 @@ Enter the "scripts/" directory of this repository’s sub-directory and type
 Perhaps running "bash scripts/render-automatically.bash" (after the
 installation) will work for you. It emits the file "RESULT-bk2hp.svg".
 
+=head3 Screenshot of the Canvas
+
+L<./images-for-reference-and-studying/Screenshot_2021-10-25_16-48-25.png>
+is a screenshot of how "RESULT-bk2hp.svg" is supposed to look like
+in Inkscape 1.1.x .
+
 =head2 back-to-my-homepage--path-union--with-less-vertical-space.svg
 
 This is the image from which to start the work. Open it in Inkscape
