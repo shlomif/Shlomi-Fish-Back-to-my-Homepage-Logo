@@ -12,7 +12,7 @@ http://www.shlomifish.org/art/back-to-my-homepage-2nd-ver/ .
 
 The previous version, which was done using CorelDRAW, can be found on
 http://www.shlomifish.org/art/bk2hp/[its page on Shlomi Fish’s site],
-but its CDR and resulting GIF may not be too usable.
+but its source CDR, and the available, GIF file result may not be too usable.
 
 == HOW TO USE
 
