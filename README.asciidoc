@@ -1,7 +1,6 @@
 == ABOUT
 
-image:back-to-my-homepage-logo/back-to-my-homepage--scripted-final--with-gradient-applied--cropped.svg[Back
-to my Homepage logo]
+image:back-to-my-homepage-logo/back-to-my-homepage--scripted-final--with-gradient-applied--cropped.svg[Back to my Homepage logo]
 
 This is the new and https://inkscape.org/[Inkscape]-based version of
 Shlomi Fish’s web graphics image reading “Back to my Homepage” in the
@@ -17,8 +16,8 @@ but its CDR and resulting GIF may not be too usable.
 
 == HOW TO USE
 
-See the README file in the link:back-to-my-homepage-logo/[directory
-below] for more information.
+See the README file in the link:back-to-my-homepage-logo/[sub-directory]
+for more information.
 
 == LICENSE
 
