@@ -56,8 +56,4 @@ The final image.
 
 The pre final image.
 
-=head2
-
 =cut
-
-=
